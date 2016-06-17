@@ -1,0 +1,23 @@
+body {
+  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/subtle_white_mini_waves.png"); /* from subtlepatterns.com*/
+  font-size: 1.7em;
+}
+
+button {
+  margin: 10px;
+}
+
+form {
+  margin: 10px 0 0 10px;
+}
+
+email-instructions>p,stgbanner-instructions>p,monetate-instructions>p {
+  margin: 10px 0 10px 20px;
+  padding: 0 10px 10px 10px;
+}
+
+#controls {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

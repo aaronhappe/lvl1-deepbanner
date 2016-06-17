@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+
+<div class="container">
+  <div ng-app="instructApp" ng-controller="instructCtrl">
+    <div id="controls">
+      <!-- DELIVERABLE SELECTION -->
+      <button class="btn btn-primary" ng-click="setProject(1)">Email</button>
+      <button class="btn btn-primary" ng-click="setProject(2)">Sitewide</button>
+      <button class="btn btn-primary" ng-click="setProject(3)">Monetate Banner</button>
+
+      <!-- BRAND SELECTION -->
+      <br>
+      <button class="btn btn-primary" ng-repeat="brand in brands" ng-show="projectType===2" ng-click="selectBrand(brand)">{{brand.name}}</button>
+
+      <!-- INPUT FOR CODEPEN ID AND CREATE INSTR. BUTTON-->
+      <form>
+        <div ng-show="showPenIDInput"><strong>CODEPEN ID:</strong> <input type="text" size="40" ng-model="codepenId" ng-bind="codepenId" style="margin-left:5px;"/><br /></div>
+        <div ng-show="showMonInput"><strong>MONETATE LINK:</strong> <input type="text" size="40" ng-model="monLink" ng-bind="monLink" /><br /></div>
+        <strong>TRELLO LINK:</strong> <input type="text" size="40" ng-model="trelloLink" ng-bind="trelloLink"/>
+      </form>
+      <button class="btn btn-success" ng-click="showInstructions(projectType,codepenId)">Create</button><br>
+    </div> <!--END OF "CONTROLS" DIV-->
+    <!-- DIRECTIVES FOR EACH DELIVERABLE -->
+    <email-instructions ng-show="showEmail"></email-instructions>
+    <stgbanner-instructions ng-show="showStg"></stgbanner-instructions>
+    <monetate-instructions ng-show="showMon"></monetate-instructions>
+
+  </div> <!--APP DIV END -->
+</div> <!--CONTAINER END -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+<script src="script.js"></script>
