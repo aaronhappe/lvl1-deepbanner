@@ -13,7 +13,8 @@ app.controller('instructCtrl',function($scope) {
   $scope.showHP = false;
   $scope.showMonInput = false;
   $scope.showPenIDInput = true;
-  $scope.showTrelloinput = true;
+  $scope.showTrelloInput = true;
+  $scope.showCreateButton = true;
   $scope.whichBrand = {};
   $scope.brands = {
     famous: {
@@ -66,17 +67,20 @@ app.controller('instructCtrl',function($scope) {
     famous: {
       name: "Fergie",
       id: 1,
-      website: "wwww.fergieshoes.com"
+      website: "wwww.fergieshoes.com",
+      codepen: "http://codepen.io/team/bwswebdev/pen/aZmBNg"
     },
     naturalizer: {
       name: "Carlos",
       id: 2,
-      website: "www.carlosshoes.com"
+      website: "www.carlosshoes.com",
+      codepen: ""
     },
     francosarto: {
       name: "Life Stride",
       id: 3,
-      website: "www.lifestride.com"
+      website: "www.lifestride.com",
+      codepen: ""
     },
   };
   
@@ -89,7 +93,8 @@ app.controller('instructCtrl',function($scope) {
     } else if(selection === 4) {
       $scope.showMonInput = false;
       $scope.showPenIDInput = false;
-      $scope.showTrelloinput = false;
+      $scope.showTrelloInput = false;
+      $scope.showCreateButton = false;
     } else {
       $scope.showMonInput = false;
       $scope.showPenIDInput = true;

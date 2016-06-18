@@ -16,7 +16,7 @@
 
       <!-- HP SELECTION -->
       <br>
-      <button class="btn btn-primary" ng-repeat="hpBrand in hpBrands" ng-show="projectType===4" ng-click="selectBrand(hpBrand)">{{hpBrand.name}}</button>
+      <button class="btn btn-primary" ng-repeat="hpBrand in hpBrands" ng-show="projectType===4"><a ng-href="{{hpBrand.codepen}}" target="_blank">{{hpBrand.name}}</a></button>
 
       <!-- INPUT FOR CODEPEN ID AND CREATE INSTR. BUTTON-->
       <form>
@@ -24,7 +24,7 @@
         <div ng-show="showMonInput"><strong>MONETATE LINK:</strong> <input type="text" size="40" ng-model="monLink" ng-bind="monLink" /><br /></div>
         <div ng-show="showTrelloInput"><strong>TRELLO LINK:</strong> <input type="text" size="40" ng-model="trelloLink" ng-bind="trelloLink"/></div>
       </form>
-      <button class="btn btn-success" ng-click="showInstructions(projectType,codepenId)">Create</button><br>
+      <button class="btn btn-success" ng-show="showCreateButton" ng-click="showInstructions(projectType,codepenId)">Create</button><br>
     </div> <!--END OF "CONTROLS" DIV-->
     <!-- DIRECTIVES FOR EACH DELIVERABLE -->
     <email-instructions ng-show="showEmail"></email-instructions>
