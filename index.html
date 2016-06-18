@@ -7,11 +7,17 @@
       <!-- DELIVERABLE SELECTION -->
       <button class="btn btn-primary" ng-click="setProject(1)">Email</button>
       <button class="btn btn-primary" ng-click="setProject(2)">Sitewide</button>
-      <button class="btn btn-primary" ng-click="setProject(3)">Monetate Banner</button>
+      <button class="btn btn-primary" ng-click="setProject(3)">Deep Banner</button>
+      <button class="btn btn-primary" ng-click="setProject(4)">Monetate Banner</button>
+      
 
       <!-- BRAND SELECTION -->
       <br>
       <button class="btn btn-primary" ng-repeat="brand in brands" ng-show="projectType===2" ng-click="selectBrand(brand)">{{brand.name}}</button>
+
+      <!-- NAT DEEP BRAND SELECTION -->
+      <br>
+      <button class="btn btn-primary" ng-repeat="natBrand in natBrands" ng-show="projectType===3" ng-click="selectBrand(natBrand)">{{natBrand.name}}</button>
 
       <!-- INPUT FOR CODEPEN ID AND CREATE INSTR. BUTTON-->
       <form>
@@ -28,5 +34,5 @@
 
   </div> <!--APP DIV END -->
 </div> <!--CONTAINER END -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
 <script src="script.js"></script>

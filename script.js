@@ -13,6 +13,18 @@ app.controller('instructCtrl',function($scope) {
   $scope.showMonInput = false;
   $scope.showPenIDInput = true;
   $scope.whichBrand = {};
+  $scope.natBrands = {
+    naturalizer: {
+      name: "Naturlizer",
+      id: 1,
+      website: "www.famousfootwear.com"
+    },
+    naturalizerca: {
+      name: "Naturalizer.ca",
+      id: 2,
+      website: "www.naturalizer.ca"
+    },  
+  };
   $scope.brands = {
     famous: {
       name: "Famous",
@@ -58,13 +70,18 @@ app.controller('instructCtrl',function($scope) {
       name: "Via Spiga",
       id: 9,
       website: "www.viaspiga.com"
+    },
+    naturalizerca: {
+      name: "Naturalizer.ca",
+      id: 10,
+      website: "www.naturalizer.ca"
     }
   };
   
   //LOGIC TO SET WHICH DELIVERABLE IS SELECTED
   $scope.setProject = function(selection) {
     $scope.projectType = selection;
-    if(selection === 3) {
+    if(selection === 4) {
       $scope.showMonInput = true;
       $scope.showPenIDInput = false;
     } else {
@@ -85,6 +102,10 @@ app.controller('instructCtrl',function($scope) {
       $scope.showStg = true;
       $scope.showMon = false;
     } else if (selection===3) {
+      $scope.showEmail = false;
+      $scope.showStg = true;
+      $scope.showMon = false;
+    } else if (selection===4) {
       $scope.showEmail = false;
       $scope.showStg = false;
       $scope.showMon = true;
@@ -119,7 +140,12 @@ app.controller('instructCtrl',function($scope) {
         $scope.passoffLink = "http://www.codepen.io/bwswebdev/pen/" + id + "?editors=1000";
         $scope.showWhich(pType);
         break;
-      case 3:
+        case 3:
+        $scope.previewLink = "http://stg." + $scope.whichBrand.website + "/en-US/Content/Dev_Asset_Previewer.aspx?codepenid=" + id + "&locationid=header";
+        $scope.passoffLink = "http://www.codepen.io/bwswebdev/pen/" + id + "?editors=1000";
+        $scope.showWhich(pType);
+        break;
+      case 4:
         $scope.showWhich(pType);
         break;
     }
